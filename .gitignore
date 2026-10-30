@@ -1,0 +1,8 @@
+# Paid product, signing keys, and customer packs must never be committed.
+# Public repos can be downloaded by anyone. Host the paid file only on
+# Gumroad / Lemon Squeezy and link to it from the Buy button.
+*.zxp
+*.zip
+*.p12
+signing/
+customer-pack/
