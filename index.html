@@ -4,307 +4,152 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Offset Guides for Adobe Illustrator · Nzambi</title>
-<meta name="description" content="Offset Guides is an Adobe Illustrator panel for packaging designers: add guides at an exact mm offset from your own 0,0 ruler origin.">
-<meta name="theme-color" content="#121316">
+<meta name="description" content="Offset Guides: an Adobe Illustrator panel that adds guides at an exact mm offset from your own 0,0 ruler origin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23121316'/%3E%3Crect x='12' y='4' width='8' height='8' rx='1.5' fill='%23ff7a45'/%3E%3Crect x='4' y='12' width='8' height='8' rx='1.5' fill='%23ff7a45'/%3E%3Crect x='20' y='12' width='8' height='8' rx='1.5' fill='none' stroke='%23ff7a45' stroke-width='1.5'/%3E%3Crect x='12' y='20' width='8' height='8' rx='1.5' fill='none' stroke='%23ff7a45' stroke-width='1.5'/%3E%3C/svg%3E">
+<script src="script.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-
-<header class="site-header">
-  <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Nzambi, home">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="12" y="4" width="8" height="8" rx="1.5"/><rect x="4" y="12" width="8" height="8" rx="1.5"/><rect x="20" y="12" width="8" height="8" rx="1.5" class="off"/><rect x="12" y="20" width="8" height="8" rx="1.5" class="off"/></svg>
-      <span>Nzambi</span>
-    </a>
-    <nav aria-label="Primary">
-      <ul>
-        <li><a href="#how">How it works</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#install">Install</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn-sm" href="#BUY_LINK_PLACEHOLDER">Buy · US$19</a>
-  </div>
+<header class="bar">
+  <a class="brand" href="#main">Offset Guides</a>
+  <nav aria-label="Primary"><a href="#reveal">Overview</a><a href="#try">Try it</a><a href="#details">Details</a><a href="#faq">FAQ</a></nav>
+  <a class="bar-buy" href="#BUY_LINK_PLACEHOLDER">Buy</a>
 </header>
-
 <main id="main">
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">Adobe Illustrator panel · for packaging designers</p>
-      <h1>Offset guides from your 0,0, <span class="accent">in one click.</span></h1>
-      <p class="lede">Set your 0,0 at the top-left of the box, tick the sides you need, type an offset in mm, and click <strong>Apply Guides</strong>. Offset Guides adds guides at your chosen offset from your 0,0 point. It respects your ruler origin and never moves it.</p>
-      <div class="cta-row">
-        <a class="btn" href="#BUY_LINK_PLACEHOLDER">Buy Offset Guides · US$19</a>
-        <a class="btn btn-ghost" href="#how">See how it works</a>
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-text">
+    <h1 id="h1">Every guide,<br><i>exactly</i> where it goes.</h1>
+    <p class="lede">A panel for Adobe Illustrator. Guides at the offset you type, measured from your own 0,0.</p>
+    <p class="hero-cta"><a class="btn" href="#BUY_LINK_PLACEHOLDER">Buy for US$19</a><a class="link" href="#try">Try it on this page →</a></p>
+  </div>
+  <div class="hero-visual">
+    <svg class="ab" id="hs" viewBox="-30 -28 244 230" role="img" aria-labelledby="hs-t hs-d">
+      <title id="hs-t">Illustrator artboard with a simple box dieline and offset guides</title>
+      <desc id="hs-d">A simple box dieline: a single rectangular cut outline. The 0,0 ruler origin sits at its top-left corner. Cyan guides run across the artboard at the chosen offset: Bottom and Right at plus the offset, Top and Left at minus the offset. The panel beside it controls the guides.</desc>
+      <g class="rulers"></g>
+      <rect class="sheet" x="-18" y="-16" width="228" height="212"/>
+      <g class="die-g"></g>
+      <g class="g-applied"></g><g class="g-preview"></g>
+      <g class="origin"></g>
+    </svg>
+    <div class="dock" role="group" aria-labelledby="og-tab">
+      <div class="dock-strip"><span class="dock-tab" id="og-tab">Offset Guides</span><span class="dock-menu" aria-hidden="true"></span></div>
+      <div class="panel">
+      <p class="p-title" id="pt-h">Add Offset Guides</p>
+      <div class="p-row">
+        <div class="og-icon" role="group" aria-label="Sides">
+          <svg width="19" height="19" viewBox="0 0 19 19" shape-rendering="crispEdges" aria-hidden="true">
+            <g class="ln"><rect x="2" y="0" width="1" height="19"/><rect x="16" y="0" width="1" height="19"/><rect x="0" y="2" width="19" height="1"/><rect x="0" y="16" width="19" height="1"/><rect x="7" y="9" width="5" height="1"/><rect x="9" y="7" width="1" height="5"/></g>
+            <g class="s" data-side="top"><rect class="bd" x="7" y="0" width="5" height="5"/><rect class="in" x="8" y="1" width="3" height="3"/></g>
+            <g class="s" data-side="left"><rect class="bd" x="0" y="7" width="5" height="5"/><rect class="in" x="1" y="8" width="3" height="3"/></g>
+            <g class="s on" data-side="right"><rect class="bd" x="14" y="7" width="5" height="5"/><rect class="in" x="15" y="8" width="3" height="3"/></g>
+            <g class="s on" data-side="bottom"><rect class="bd" x="7" y="14" width="5" height="5"/><rect class="in" x="8" y="15" width="3" height="3"/></g>
+          </svg>
+          <button type="button" class="sq t" data-side="top" aria-pressed="false" aria-label="Top"></button>
+          <button type="button" class="sq l" data-side="left" aria-pressed="false" aria-label="Left"></button>
+          <button type="button" class="sq r" data-side="right" aria-pressed="true" aria-label="Right"></button>
+          <button type="button" class="sq b" data-side="bottom" aria-pressed="true" aria-label="Bottom"></button>
+        </div>
+        <label for="off-h">Guide Offset:</label>
+        <input id="off-h" type="text" inputmode="decimal" value="10 mm" autocomplete="off" spellcheck="false">
       </div>
-      <ul class="meta" aria-label="Key facts">
-        <li>Illustrator 2020 and later</li>
-        <li>Mac and Windows installers included</li>
-        <li>Signed .zxp</li>
-      </ul>
+      <div class="p-btns"><button type="button" data-act="apply">Apply Guides</button><button type="button" data-act="undo">Undo</button></div>
+      </div>
     </div>
-
-    <figure class="hero-art" aria-labelledby="art-cap">
-      <svg viewBox="0 0 520 600" role="img" aria-labelledby="art-title art-desc">
-        <title id="art-title">Illustration of the Offset Guides panel and guides placed around the 0,0 point</title>
-        <desc id="art-desc">A packaging dieline with the ruler origin at its top-left corner. All four cyan guides are measured from that 0,0 point: Top is 10 mm above it, Left is 10 mm to its left, Bottom is 10 mm below it and Right is 10 mm to its right, so they form a small grid around the corner and the Bottom and Right guides cut through the box near its top-left. Below it, the Offset Guides panel is shown docked in a dark panel with a tab titled Offset Guides. It reads Add Offset Guides, then a small icon of four guide lines with a plus in the middle and four small squares for Top, Left, Right and Bottom, with Right and Bottom switched on as they are by default, then a Guide Offset field reading 10 mm, and Apply Guides and Undo buttons.</desc>
-        <defs>
-          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#24262c" stroke-width="1"/></pattern>
-          <clipPath id="art-clip"><rect width="520" height="600" rx="18"/></clipPath>
-        </defs>
-        <g clip-path="url(#art-clip)">
-        <rect width="520" height="600" fill="#17181c"/>
-        <rect width="520" height="340" fill="url(#grid)" opacity=".7"/>
-
-        <!-- guides: all four measured from the 0,0 origin (box top-left), 10 mm = 30 units -->
-        <g class="guides" stroke="#3fd0ff" stroke-width="1.2">
-          <line x1="0" y1="80" x2="520" y2="80"/>
-          <line x1="60" y1="0" x2="60" y2="340"/>
-          <line x1="0" y1="140" x2="520" y2="140"/>
-          <line x1="120" y1="0" x2="120" y2="340"/>
-        </g>
-        <g font-family="system-ui, sans-serif" font-size="10" fill="#3fd0ff" opacity=".85">
-          <text x="8" y="75">Top</text>
-          <text x="8" y="153">Bottom</text>
-          <text x="64" y="16">Left</text>
-          <text x="124" y="16">Right</text>
-        </g>
-
-        <!-- dieline: tuck box front panel, glue flap and bottom tuck -->
-        <g fill="none" stroke="#e8e6e3" stroke-width="1.6" stroke-linejoin="round">
-          <rect x="90" y="110" width="210" height="190"/>
-        </g>
-        <g fill="none" stroke="#ff7a45" stroke-width="1.4" stroke-dasharray="6 4">
-          <path d="M300 122 L318 136 V274 L300 288"/>
-          <path d="M90 300 L110 320 H280 L300 300"/>
-        </g>
-        <g fill="none" stroke="#e8e6e3" stroke-width="1" opacity=".45">
-          <line x1="90" y1="255" x2="300" y2="255" stroke-dasharray="2 4"/>
-        </g>
-
-        <!-- origin marker -->
-        <g class="origin">
-          <circle cx="90" cy="110" r="5" fill="#ff7a45"/>
-          <circle cx="90" cy="110" r="11" fill="none" stroke="#ff7a45" stroke-width="1.2" opacity=".6"/>
-          <text x="96" y="131" fill="#ff7a45" font-size="13" font-weight="700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" stroke="#17181c" stroke-width="4" paint-order="stroke">0,0</text>
-        </g>
-
-        <!-- dimension callouts: distances from 0,0 -->
-        <g stroke="#3fd0ff" stroke-width="1" fill="none">
-          <path d="M175 80 V110 M171 80 H179 M171 110 H179"/>
-          <path d="M175 110 V140 M171 140 H179"/>
-          <path d="M60 205 H90 M60 201 V209 M90 201 V209"/>
-          <path d="M90 225 H120 M120 221 V229 M90 221 V229"/>
-        </g>
-        <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#3fd0ff" stroke="#17181c" stroke-width="4" paint-order="stroke">
-          <text x="183" y="99">Top −10 mm</text>
-          <text x="183" y="129">Bottom +10 mm</text>
-          <text x="58" y="197" text-anchor="end">Left</text>
-          <text x="58" y="209" text-anchor="end">−10 mm</text>
-          <text x="124" y="229">Right +10 mm</text>
-        </g>
-
-        <!-- docked panel: a plain dark panel frame with one tab, drawn at 2x.
-             Contents mirror panel/net.nzambi.offsetguides (index.html + css/panel.css) at its 260 x 110 px default size. -->
-        <g class="og-dock" transform="translate(0 340) scale(2)">
-          <rect class="og-strip" width="260" height="130"/>
-          <rect class="og-edge" width="260" height="1"/>
-          <rect class="og-tab" x="0" y="1" width="88" height="19"/>
-          <text class="og-tabtext" x="10" y="14.5">Offset Guides</text>
-          <rect class="og-menu" x="241" y="7" width="9" height="1"/><rect class="og-menu" x="241" y="10" width="9" height="1"/><rect class="og-menu" x="241" y="13" width="9" height="1"/>
-          <!-- panel body: background, padding 8px 10px, 11px type, as in panel.css -->
-          <g class="og-panel" transform="translate(0 20)">
-            <rect class="og-bg" width="260" height="110"/>
-            <text class="og-title" x="10" y="18">Add Offset Guides</text>
-            <!-- the panel's own 19 x 19 icon, copied from index.html -->
-            <svg x="10" y="30" width="19" height="19" viewBox="0 0 19 19" shape-rendering="crispEdges">
-              <g class="ln">
-                <rect x="2" y="0" width="1" height="19"/><rect x="16" y="0" width="1" height="19"/>
-                <rect x="0" y="2" width="19" height="1"/><rect x="0" y="16" width="19" height="1"/>
-                <rect x="7" y="9" width="5" height="1"/><rect x="9" y="7" width="1" height="5"/>
-              </g>
-              <g class="sq" data-side="top"><rect class="bd" x="7" y="0" width="5" height="5"/><rect class="in" x="8" y="1" width="3" height="3"/></g>
-              <g class="sq" data-side="left"><rect class="bd" x="0" y="7" width="5" height="5"/><rect class="in" x="1" y="8" width="3" height="3"/></g>
-              <g class="sq on" data-side="right"><rect class="bd" x="14" y="7" width="5" height="5"/><rect class="in" x="15" y="8" width="3" height="3"/></g>
-              <g class="sq on" data-side="bottom"><rect class="bd" x="7" y="14" width="5" height="5"/><rect class="in" x="8" y="15" width="3" height="3"/></g>
-            </svg>
-            <text class="og-text" x="37" y="43.3">Guide Offset:</text>
-            <rect class="og-field" x="109.5" y="28" width="140.5" height="22" rx="2"/>
-            <text class="og-text" x="116.5" y="43.3">10 mm</text>
-            <rect class="og-btn" x="10" y="58" width="117" height="24" rx="2"/>
-            <rect class="og-btn" x="133" y="58" width="117" height="24" rx="2"/>
-            <text class="og-text" x="68.5" y="74.3" text-anchor="middle">Apply Guides</text>
-            <text class="og-text" x="191.5" y="74.3" text-anchor="middle">Undo</text>
-          </g>
-        </g>
-        </g>
-      </svg>
-      <figcaption id="art-cap">All four guides are measured from your 0,0 at the dieline's top-left: Top and Left at −10 mm, Bottom and Right at +10 mm.</figcaption>
-    </figure>
+    <p class="status hs-status" role="status" aria-live="polite"></p>
   </div>
 </section>
 
-<!-- DEMO -->
-<section class="demo-section" aria-labelledby="demo-h">
-  <div class="wrap">
-    <h2 id="demo-h" class="visually-hidden">Demo</h2>
-    <!-- REPLACE this block with your demo clip, e.g.
-         <video src="demo.mp4" autoplay muted loop playsinline width="1280" height="720"></video>
-         or <img src="demo.gif" alt="Setting 0,0, ticking sides and clicking Apply Guides" width="1280" height="720"> -->
-    <div class="demo-placeholder" role="img" aria-label="Placeholder for demo video">
-      <span class="play" aria-hidden="true">▶</span>
-      <p><strong>[DEMO]</strong> Demo clip goes here: set 0,0, tick sides, click Apply</p>
+<section class="reveal" id="reveal" aria-labelledby="rev-h">
+  <div class="reveal-sticky">
+    <svg id="rv" viewBox="0 0 1000 620" role="img" aria-labelledby="rv-t rv-d">
+      <title id="rv-t">Guides appearing on a dieline as you scroll</title>
+      <desc id="rv-d">A simple box dieline. With 0,0 at the top-left of the box and a 10 mm offset, Bottom and Right guides appear at plus 10 mm, then Top and Left at minus 10 mm. The origin never moves.</desc>
+      <g class="die-g" transform="translate(200 80) scale(3)"></g>
+      <g id="rv-g"></g>
+      <g class="o"><circle cx="380" cy="200" r="6"/></g>
+      <text class="o-t" x="368" y="190" text-anchor="end">0,0</text>
+    </svg>
+    <div class="captions">
+      <h2 id="rev-h" class="cap" data-i="0">Set your 0,0 on the box.<span>Offset Guides reads it. It never moves it.</span></h2>
+      <p class="cap" data-i="1">Bottom and Right, +10 mm.<span>The defaults, ready when you open the panel.</span></p>
+      <p class="cap" data-i="2">Top and Left, −10 mm.<span>Measured from 0,0. Not from the box edges.</span></p>
     </div>
   </div>
 </section>
 
-<!-- HOW -->
-<section id="how" aria-labelledby="how-h">
-  <div class="wrap">
-    <p class="eyebrow">How it works</p>
-    <h2 id="how-h">Three steps. No maths on the artboard.</h2>
-    <ol class="steps">
-      <li>
-        <span class="step-n" aria-hidden="true">1</span>
-        <h3>Set your 0,0</h3>
-        <p>Drag the ruler origin to the top-left corner of your dieline box, the way you already do. Offset Guides reads it and never moves or overwrites it.</p>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">2</span>
-        <h3>Pick sides and offset</h3>
-        <p>Tick any of the four squares (Top, Left, Bottom, Right) and type a <strong>Guide Offset</strong> in mm. The default is 10 mm.</p>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">3</span>
-        <h3>Apply Guides</h3>
-        <p>Click <strong>Apply Guides</strong>. Guides are added at your chosen offset from your 0,0 point. Didn't want them? Click <strong>Undo</strong> to step back through earlier applies.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section id="features" class="alt" aria-labelledby="feat-h">
-  <div class="wrap">
-    <p class="eyebrow">Features</p>
-    <h2 id="feat-h">Small panel, does one job properly</h2>
-    <ul class="features">
-      <li>
-        <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><path d="M6 10v10M10 6h10"/></svg>
-        <h3>Your origin stays yours</h3>
-        <p>It works from the 0,0 you set and never moves, resets or overwrites your ruler origin.</p>
-      </li>
-      <li>
-        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="16" y="9" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/></svg>
-        <h3>Four-square side toggles</h3>
-        <p>Turn Top, Left, Bottom and Right on or off with one click each. Add only the guides you need.</p>
-      </li>
-      <li>
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h18M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg>
-        <h3>Exact offsets in mm</h3>
-        <p>One Guide Offset field, 10 mm by default, measured from your 0,0 point. Top and Left go negative (above and left of 0,0), Bottom and Right go positive (below and right of 0,0).</p>
-      </li>
-      <li>
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <h3>No duplicates, nothing removed</h3>
-        <p>Apply Guides won't double up guides that are already there, and it doesn't delete any of your existing guides.</p>
-      </li>
-      <li>
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg>
-        <h3>Multi-step Undo</h3>
-        <p>Undo steps back through your previous applies, one at a time.</p>
-      </li>
-      <li>
-        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M15 4v16"/></svg>
-        <h3>Docks like any panel</h3>
-        <p>Open it from <em>Window › Extensions (Legacy) › Offset Guides</em> and dock it next to your other panels.</p>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- INSTALL -->
-<section id="install" aria-labelledby="inst-h">
-  <div class="wrap">
-    <p class="eyebrow">Install</p>
-    <h2 id="inst-h">Up and running in a few minutes</h2>
-    <ol class="steps">
-      <li>
-        <span class="step-n" aria-hidden="true">1</span>
-        <h3>Download</h3>
-        <p>After purchase you get one download with a signed <code>.zxp</code>, double-click installers for Mac and Windows, and a one-page install guide.</p>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">2</span>
-        <h3>Double-click the installer</h3>
-        <p>Run the installer for your system. If you'd rather use your own ZXP installer tool, the signed <code>.zxp</code> is included too.</p>
-      </li>
-      <li>
-        <span class="step-n" aria-hidden="true">3</span>
-        <h3>Open the panel</h3>
-        <p>Restart Illustrator, then choose <em>Window › Extensions (Legacy) › Offset Guides</em>. Dock it and you're set.</p>
-      </li>
-    </ol>
-    <div class="cta-band">
-      <p>Offset Guides for Illustrator 2020 and later. <span class="price">US$19</span></p>
-      <a class="btn" href="#BUY_LINK_PLACEHOLDER">Buy Offset Guides</a>
+<section class="try" id="try" aria-labelledby="try-h">
+  <h2 id="try-h">Try it.</h2>
+  <p class="sub">Toggle the sides, change the offset, Apply, Undo.</p>
+  <div class="try-stage">
+    <svg id="ts" viewBox="0 0 560 380" role="img" aria-labelledby="ts-t"><title id="ts-t">Artboard preview. Updates as you use the panel.</title>
+      <rect class="tbox" x="200" y="120" width="190" height="170" rx="0"/>
+      <g id="t-applied"></g><g id="t-preview"></g>
+      <circle class="to" cx="200" cy="120" r="5"/>
+    </svg>
+    <div class="panel" role="group" aria-labelledby="pt">
+      <p class="p-title" id="pt">Add Offset Guides</p>
+      <div class="p-row">
+        <div class="og-icon" role="group" aria-label="Sides">
+          <svg width="19" height="19" viewBox="0 0 19 19" shape-rendering="crispEdges" aria-hidden="true">
+            <g class="ln"><rect x="2" y="0" width="1" height="19"/><rect x="16" y="0" width="1" height="19"/><rect x="0" y="2" width="19" height="1"/><rect x="0" y="16" width="19" height="1"/><rect x="7" y="9" width="5" height="1"/><rect x="9" y="7" width="1" height="5"/></g>
+            <g class="s" data-side="top"><rect class="bd" x="7" y="0" width="5" height="5"/><rect class="in" x="8" y="1" width="3" height="3"/></g>
+            <g class="s" data-side="left"><rect class="bd" x="0" y="7" width="5" height="5"/><rect class="in" x="1" y="8" width="3" height="3"/></g>
+            <g class="s on" data-side="right"><rect class="bd" x="14" y="7" width="5" height="5"/><rect class="in" x="15" y="8" width="3" height="3"/></g>
+            <g class="s on" data-side="bottom"><rect class="bd" x="7" y="14" width="5" height="5"/><rect class="in" x="8" y="15" width="3" height="3"/></g>
+          </svg>
+          <button type="button" class="sq t" data-side="top" aria-pressed="false" aria-label="Top"></button>
+          <button type="button" class="sq l" data-side="left" aria-pressed="false" aria-label="Left"></button>
+          <button type="button" class="sq r" data-side="right" aria-pressed="true" aria-label="Right"></button>
+          <button type="button" class="sq b" data-side="bottom" aria-pressed="true" aria-label="Bottom"></button>
+        </div>
+        <label for="off">Guide Offset:</label>
+        <input id="off" type="text" inputmode="decimal" value="10 mm" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="p-btns"><button type="button" id="apply" data-act="apply">Apply Guides</button><button type="button" id="undo" data-act="undo">Undo</button></div>
     </div>
   </div>
+  <p id="status" class="status" role="status" aria-live="polite"></p>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="alt" aria-labelledby="faq-h">
-  <div class="wrap narrow">
-    <p class="eyebrow">FAQ</p>
-    <h2 id="faq-h">Questions</h2>
-    <div class="faq">
-      <details>
-        <summary>Which versions of Illustrator does it work with?</summary>
-        <p>Illustrator 2020 and later. It has been tested on Illustrator 2026 (version 30.x) on Mac. Mac and Windows installers are both included.</p>
-      </details>
-      <details>
-        <summary>Does it change my ruler origin or delete my guides?</summary>
-        <p>No. It reads the 0,0 you set and never moves or overwrites it. Apply Guides adds guides at your chosen offset from your 0,0 point. It won't add a guide where one already exists, and it doesn't remove existing guides.</p>
-      </details>
-      <details>
-        <summary>Which way do the offsets go?</summary>
-        <p>Every guide is measured from your 0,0 point, not from the edges of the box. With 0,0 at the top-left of your dieline box and a 10 mm offset, Top is a horizontal guide 10 mm above 0,0 and Left is a vertical guide 10 mm left of 0,0. Bottom is a horizontal guide 10 mm below 0,0 and Right is a vertical guide 10 mm right of 0,0.</p>
-      </details>
-      <details>
-        <summary>Do I get updates?</summary>
-        <p>[UPDATES_POLICY] e.g. how long updates are included and how buyers receive them.</p>
-      </details>
-      <details>
-        <summary>What's your refund policy?</summary>
-        <p>If Offset Guides doesn't work on your setup, email me within 14 days of purchase for a full refund. No hassle.</p>
-      </details>
-      <details>
-        <summary>What happens when Adobe retires this kind of panel?</summary>
-        <p>Offset Guides is built in Adobe's current extension panel format (CEP), which is why it's listed under <em>Extensions (Legacy)</em>. Adobe is phasing that format out, expected around 2029. [CONFIRM] I plan to port Offset Guides to Adobe's newer UXP platform once it's publicly available for Illustrator, and existing buyers will get that update. [/CONFIRM]</p>
-      </details>
-      <details>
-        <summary>How do I get help?</summary>
-        <p>Email support@nzambi.net.</p>
-      </details>
-    </div>
-  </div>
+<section class="film" aria-label="Demo video">
+  <!-- REPLACE with <video src="demo.mp4" autoplay muted loop playsinline></video> -->
+  <div class="demo" role="img" aria-label="Placeholder for demo video"><p><strong>[DEMO]</strong> Demo clip goes here: set 0,0, tick sides, click Apply</p></div>
+</section>
+
+<section class="details" id="details" aria-labelledby="det-h">
+  <h2 id="det-h">Small panel.<br>Careful about the details.</h2>
+  <dl>
+    <div><dt>Your origin stays put.</dt><dd>It reads the 0,0 you set and never moves, resets or overwrites it.</dd></div>
+    <div><dt>No duplicates.</dt><dd>It won't add a guide where one already exists, and never removes yours.</dd></div>
+    <div><dt>Undo that remembers.</dt><dd>Steps back through previous applies, one at a time.</dd></div>
+    <div><dt>Where you'd expect it.</dt><dd>Window › Extensions (Legacy) › Offset Guides. Illustrator 2020 and later, Mac and Windows.</dd></div>
+  </dl>
+</section>
+
+<section class="buy" aria-labelledby="buy-h">
+  <h2 id="buy-h">US$19.</h2>
+  <p>One download: a signed .zxp, Mac and Windows installers, and a one-page install guide.</p>
+  <a class="btn" href="#BUY_LINK_PLACEHOLDER">Buy Offset Guides</a>
+  <p class="refund">If Offset Guides doesn't work on your setup, email me within 14 days of purchase for a full refund. No hassle.</p>
+</section>
+
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">Questions</h2>
+  <details><summary>Which versions of Illustrator?</summary><p>Illustrator 2020 and later. Mac and Windows installers are included.</p></details>
+  <details><summary>Which way do the offsets go?</summary><p>Every guide is measured from your 0,0 point, not from the box edges. Top and Left land at −offset, Bottom and Right at +offset.</p></details>
+  <details><summary>Do I get updates?</summary><p>[UPDATES_POLICY]</p></details>
+  <details><summary>What's the refund policy?</summary><p>If Offset Guides doesn't work on your setup, email me within 14 days of purchase for a full refund. No hassle.</p></details>
+  <details><summary>What happens when Adobe retires this kind of panel?</summary><p>Offset Guides is built in Adobe's extension panel format (CEP), which is why it's listed under <i>Extensions (Legacy)</i>. Adobe is phasing that format out, expected around 2029. [CONFIRM] I plan to port Offset Guides to Adobe's newer UXP platform once it's publicly available for Illustrator, and existing buyers will get that update. [/CONFIRM]</p></details>
+  <details><summary>How do I get help?</summary><p>Email <a href="mailto:support@nzambi.net">support@nzambi.net</a>.</p></details>
 </section>
 </main>
-
-<footer class="site-footer">
-  <div class="wrap foot">
-    <a class="brand" href="#top" aria-label="Nzambi, back to top">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="12" y="4" width="8" height="8" rx="1.5"/><rect x="4" y="12" width="8" height="8" rx="1.5"/><rect x="20" y="12" width="8" height="8" rx="1.5" class="off"/><rect x="12" y="20" width="8" height="8" rx="1.5" class="off"/></svg>
-      <span>Nzambi</span>
-    </a>
-    <p>Offset Guides by Nzambi · <a href="https://guides.nzambi.net">guides.nzambi.net</a> · <a href="mailto:support@nzambi.net">Contact</a></p>
-    <p class="small">© <span>2026</span> Nzambi. Adobe and Illustrator are trademarks of Adobe Inc. Offset Guides is not affiliated with or endorsed by Adobe.</p>
-  </div>
+<footer class="foot">
+  <p>Offset Guides by Nzambi · <a href="https://guides.nzambi.net">guides.nzambi.net</a> · <a href="mailto:support@nzambi.net">support@nzambi.net</a></p>
+  <p>© 2026 Nzambi. Adobe and Illustrator are trademarks of Adobe Inc. Offset Guides is not affiliated with or endorsed by Adobe.</p>
 </footer>
 </body>
 </html>
