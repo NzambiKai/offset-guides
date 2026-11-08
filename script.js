@@ -52,4 +52,30 @@
   // Try-it section
   const ts = $("#ts");
   panel({ root: $(".try-stage .panel"), svg: ts, gA: $("#t-applied"), gP: $("#t-preview"), status: $("#status"), M: { x: 200, y: 120 }, PX: 4, MAX: 28, box: { x0: 0, x1: 560, y0: 0, y1: 380 }, labels: false });
+
+  // Silent file. muted stays on so autoplay is allowed; skip autoplay when reduced motion is requested.
+  const video = $("#demo-video"), toggle = $("#demo-toggle");
+  if (video && toggle) {
+    const motion = matchMedia("(prefers-reduced-motion: reduce)");
+    const arm = () => { video.muted = true; video.defaultMuted = true; video.playsInline = true; video.setAttribute("muted", ""); video.setAttribute("playsinline", ""); };
+    const label = () => { if (!toggle.disabled) toggle.textContent = video.paused ? "Play demo" : "Pause demo"; };
+    const play = () => { arm(); const pending = video.play(); if (pending && pending.then) pending.then(label, label); else label(); };
+    const hold = () => { video.autoplay = false; video.removeAttribute("autoplay"); video.loop = false; video.pause(); label(); };
+    const applyMotion = () => {
+      arm();
+      if (motion.matches) hold();
+      else { video.loop = true; video.autoplay = true; video.setAttribute("autoplay", ""); video.setAttribute("loop", ""); play(); }
+    };
+    toggle.addEventListener("click", () => {
+      if (toggle.disabled) return;
+      if (video.paused) { toggle.textContent = "Pause demo"; play(); }
+      else { video.pause(); toggle.textContent = "Play demo"; }
+    });
+    video.addEventListener("play", label);
+    video.addEventListener("pause", label);
+    video.addEventListener("ended", label);
+    video.addEventListener("error", () => { toggle.disabled = true; toggle.textContent = "Demo unavailable"; });
+    if (motion.addEventListener) motion.addEventListener("change", applyMotion);
+    applyMotion();
+  }
 })();

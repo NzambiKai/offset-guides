@@ -144,8 +144,15 @@
 </section>
 
 <section class="film" aria-label="Demo video">
-  <!-- REPLACE with <video src="demo.mp4" autoplay muted loop playsinline></video> -->
-  <div class="demo" role="img" aria-label="Placeholder for demo video"><p><strong>[DEMO]</strong> Demo clip goes here: set 0,0, tick sides, click Apply</p></div>
+  <figure class="demo">
+    <video id="demo-video" class="demo-video" width="1920" height="1080" src="demo.mp4" autoplay muted loop playsinline webkit-playsinline controls preload="metadata" aria-describedby="demo-caption">
+      <p>Silent demo. Set the offset, tick the sides, click Apply Guides. <a href="demo.mp4">Watch the demo</a>.</p>
+    </video>
+    <div class="demo-actions">
+      <button type="button" class="demo-toggle" id="demo-toggle" aria-controls="demo-video">Play demo</button>
+    </div>
+    <figcaption id="demo-caption">Silent demo. Set the offset, tick the sides, click Apply Guides.</figcaption>
+  </figure>
 </section>
 
 <section class="details" id="details" aria-labelledby="det-h">

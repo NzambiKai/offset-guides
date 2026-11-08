@@ -4,7 +4,7 @@ A static one-page site: `index.html` + `styles.css`. You don't need to build any
 
 ## Deploy to GitHub Pages (3 steps)
 
-1. **Create a public repo for the site only**, e.g. `offset-guides-site`, and upload `index.html`, `styles.css`, and this README (plus `demo.mp4`/`demo.gif` if you add one).
+1. **Create a public repo for the site only**, e.g. `offset-guides-site`, and upload `index.html`, `styles.css`, `script.js`, `demo.mp4`, and this README.
 2. In the repo, go to **Settings → Pages**. Under *Build and deployment*, choose **Deploy from a branch**, pick `main` and `/ (root)`, and click **Save**.
 3. Wait a minute, then open the URL GitHub shows (`https://<user>.github.io/<repo>/`). For your .net domain, enter it under **Settings → Pages → Custom domain**, add the DNS records GitHub lists at your registrar, and tick **Enforce HTTPS**.
 
@@ -18,7 +18,7 @@ Search `index.html` for `[` and `PLACEHOLDER`:
 |---|---|---|
 | `#BUY_LINK_PLACEHOLDER` | 3 Buy buttons (header, hero, install band) | Your Gumroad / Lemon Squeezy product URL |
 | `[PRICE]` | Header button, hero button, install band | Your price, with currency |
-| `[DEMO]` block | Under the hero | Replace the `.demo-placeholder` div with a `<video>` or `<img>` (example in the HTML comment) |
+| Demo video (`demo.mp4`) | Film section | In place. Silent screen recording of the panel. Its length is not the measured setup time. |
 | `[UPDATES_POLICY]` | FAQ "Do I get updates?" | How long updates are included and how buyers get them |
 | `[REFUND_POLICY]` | FAQ "refund policy" | Your refund terms |
 | `[CONFIRM] … [/CONFIRM]` | FAQ "When Adobe retires panels" | Check the UXP-port promise. Edit it, then remove the markers |
