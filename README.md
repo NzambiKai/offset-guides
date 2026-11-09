@@ -16,19 +16,13 @@ Search `index.html` for `[` and `PLACEHOLDER`:
 
 | Placeholder | Where | What to put |
 |---|---|---|
-| `#BUY_LINK_PLACEHOLDER` | 3 Buy buttons (header, hero, install band) | Your Gumroad / Lemon Squeezy product URL |
-| `[PRICE]` | Header button, hero button, install band | Your price, with currency |
-| Demo video (`demo.mp4`) | Film section | In place. Real-time recording of this one dieline. |
-| `[UPDATES_POLICY]` | FAQ "Do I get updates?" | How long updates are included and how buyers get them |
-| `[REFUND_POLICY]` | FAQ "refund policy" | Your refund terms |
-| `[CONFIRM] … [/CONFIRM]` | FAQ "When Adobe retires panels" | Check the UXP-port promise. Edit it, then remove the markers |
-| `[SUPPORT_EMAIL]` | FAQ "help" + footer Contact link | Support address |
-| `[DOMAIN]` | Footer link (`https://[DOMAIN].net`) | Your .net domain |
-| `[YEAR]` | Footer copyright | e.g. `2026` |
+| `#BUY_LINK_PLACEHOLDER` | 3 Buy buttons (header, hero, price band) | Still open. Product publication and payout are not verified, so do not invent a checkout URL. |
 
 ## Claims on the page (keep them accurate)
-- Works with Illustrator 2020 and later. Tested on Illustrator 2026 (30.x) on Mac.
-- "Mac and Windows installers included". Windows hasn't been tested, so don't claim tested Windows support.
-- Guide placement: all four guides are measured from the user's 0,0 point (Top/Left at −offset, Bottom/Right at +offset from 0,0), not from the edges of the box. Keep the copy and the hero illustration saying this.
+- The panel is in use on this Mac. A Windows installer is included and has not been tested on Windows. Do not claim an Illustrator 2020+ matrix or tested Windows support.
+- Fresh default is all four sides on, at 10 mm. After that, the panel remembers the sides and the physical offset. The page preview shows the fresh default only.
+- You move the ruler origin. Top and Left land at −offset, Bottom and Right at +offset, from that 0,0. Not from the selection, artboard, or artwork edges. No custom Undo.
+- Units follow File › Document Setup and convert a typed physical distance. The panel does not change the document's units.
+- Timing is this dieline: 1 minute 45 seconds by hand, 30 seconds with Offset Guides, 75 seconds saved. Say results vary by task. Do not lead with a percentage or call it faster.
+- US$19 one-time. 14-day refund if it does not work on the buyer's setup. The install guide is two pages. Do not claim notarization or a trusted signature.
 - The page has no testimonials, user counts, or stats. Only add real ones.
-- Timing is one measured dieline in the demo: 1 minute 45 seconds by hand, 30 seconds with Offset Guides. That is 75 seconds less, about 71% less time, not a guarantee for every file. Do not call it 71% faster.

@@ -8,19 +8,21 @@
   document.querySelectorAll(".die-g").forEach(g => g.append(el("path", { class: "cut", d: CUT, "vector-effect": "non-scaling-stroke" }), el("path", { class: "fold", d: FOLD, "vector-effect": "non-scaling-stroke" })));
   // reveal scene (s=3 px/mm, origin at 380,200)
   const O = { x: 380, y: 200 }, D = 30, G = $("#rv-g");
-  const set = [
-    [{ k: "h", p: O.y + D, lab: "+10 mm", x: 20, y: O.y + D - 8 }, { k: "v", p: O.x + D, lab: "+10 mm", x: O.x + D + 8, y: 24 }],
-    [{ k: "h", p: O.y - D, lab: "−10 mm", x: 20, y: O.y - D - 8 }, { k: "v", p: O.x - D, lab: "−10 mm", x: O.x - D - 8, y: 24, end: 1 }]
-  ].map(grp => grp.map(g => { const l = g.k === "h" ? el("line", { x1: 0, x2: 1000, y1: g.p, y2: g.p }) : el("line", { y1: 0, y2: 620, x1: g.p, x2: g.p }); const t = el("text", { x: g.x, y: g.y, "text-anchor": g.end ? "end" : "start" }, g.lab); G.append(l, t); return [l, t]; }));
+  const guides = [
+    { k: "h", p: O.y + D, lab: "+10 mm", x: 20, y: O.y + D - 8 },
+    { k: "v", p: O.x + D, lab: "+10 mm", x: O.x + D + 8, y: 24 },
+    { k: "h", p: O.y - D, lab: "−10 mm", x: 20, y: O.y - D - 8 },
+    { k: "v", p: O.x - D, lab: "−10 mm", x: O.x - D - 8, y: 24, end: 1 }
+  ].map(g => { const l = g.k === "h" ? el("line", { x1: 0, x2: 1000, y1: g.p, y2: g.p }) : el("line", { y1: 0, y2: 620, x1: g.p, x2: g.p }); const t = el("text", { x: g.x, y: g.y, "text-anchor": g.end ? "end" : "start" }, g.lab); G.append(l, t); return [l, t]; });
   const caps = [...document.querySelectorAll(".cap")];
-  function stage(i) { set.forEach((grp, gi) => grp.forEach(([l, t]) => { l.classList.toggle("on", i > gi); t.classList.toggle("on", i > gi); })); caps.forEach((c, ci) => c.classList.toggle("on", ci === i)); }
+  function stage(i) { const show = i >= 1; guides.forEach(([l, t]) => { l.classList.toggle("on", show); t.classList.toggle("on", show); }); caps.forEach((c, ci) => c.classList.toggle("on", ci === i)); }
   if (reduce) stage(2);
   else { const R = $("#reveal"); const upd = () => { const r = R.getBoundingClientRect(); const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight))); stage(p < .3 ? 0 : p < .65 ? 1 : 2); }; addEventListener("scroll", upd, { passive: true }); upd(); }
 
   // Panel controller, bound per artboard
   function panel({ root, svg, gA, gP, status, M, PX, MAX, box, labels, initial }) {
-    const sides = { top: false, left: false, right: true, bottom: true };
-    let applied = []; const hist = [];
+    const sides = { top: true, left: true, right: true, bottom: true };
+    let applied = [];
     const q = s => root.querySelector(s), inp = q("input");
     const off = () => { const v = parseFloat(inp.value.replace(",", ".")); return isFinite(v) && v >= 0 ? v : null; };
     const gf = mm => { const d = Math.min(mm, MAX) * PX, o = []; if (sides.top) o.push({ k: "h", p: M.y - d, mm: -mm }); if (sides.bottom) o.push({ k: "h", p: M.y + d, mm }); if (sides.left) o.push({ k: "v", p: M.x - d, mm: -mm }); if (sides.right) o.push({ k: "v", p: M.x + d, mm }); return o; };
@@ -32,10 +34,9 @@
     const say = m => status.textContent = m;
     root.querySelectorAll("button.sq").forEach(b => b.addEventListener("click", () => { const s = b.dataset.side; sides[s] = !sides[s]; b.setAttribute("aria-pressed", sides[s]); root.querySelector(`g.s[data-side=${s}]`).classList.toggle("on", sides[s]); draw(); }));
     inp.addEventListener("input", draw);
-    const apply = (quiet) => { const mm = off(); if (mm === null) return say("Type an offset in mm."); const h = new Set(applied.map(key)); const add = gf(mm).filter(g => !h.has(key(g))); if (!add.length) return say("Nothing new to add. Guides are never doubled up."); hist.push(applied.slice()); applied = applied.concat(add); draw(); if (!quiet) say(`Applied ${add.length} guide${add.length > 1 ? "s" : ""} at ${mm} mm from 0,0.`); };
-    q("[data-act=apply]").addEventListener("click", () => apply());
-    q("[data-act=undo]").addEventListener("click", () => { if (!hist.length) return say("Nothing to undo."); applied = hist.pop(); draw(); say("Stepped back one apply."); });
-    if (initial) { const mm = off(); applied = gf(mm); } // pre-applied defaults (not undoable)
+    const apply = () => { const mm = off(); if (mm === null) return say("Type an offset in mm."); const h = new Set(applied.map(key)); const add = gf(mm).filter(g => !h.has(key(g))); if (!add.length) return say("Nothing new to add. A guide already there is left as it is."); applied = applied.concat(add); draw(); say(`Applied ${add.length} guide${add.length > 1 ? "s" : ""} at ${mm} mm from 0,0.`); };
+    q("[data-act=apply]").addEventListener("click", apply);
+    if (initial) applied = gf(off());
     draw();
   }
 
