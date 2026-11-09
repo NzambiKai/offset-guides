@@ -18,7 +18,7 @@ Search `index.html` for `[` and `PLACEHOLDER`:
 |---|---|---|
 | `#BUY_LINK_PLACEHOLDER` | 3 Buy buttons (header, hero, install band) | Your Gumroad / Lemon Squeezy product URL |
 | `[PRICE]` | Header button, hero button, install band | Your price, with currency |
-| Demo video (`demo.mp4`) | Film section | In place. Silent screen recording of the panel. Its length is not the measured setup time. |
+| Demo video (`demo.mp4`) | Film section | In place. Real-time recording of this one dieline. |
 | `[UPDATES_POLICY]` | FAQ "Do I get updates?" | How long updates are included and how buyers get them |
 | `[REFUND_POLICY]` | FAQ "refund policy" | Your refund terms |
 | `[CONFIRM] … [/CONFIRM]` | FAQ "When Adobe retires panels" | Check the UXP-port promise. Edit it, then remove the markers |
@@ -31,3 +31,4 @@ Search `index.html` for `[` and `PLACEHOLDER`:
 - "Mac and Windows installers included". Windows hasn't been tested, so don't claim tested Windows support.
 - Guide placement: all four guides are measured from the user's 0,0 point (Top/Left at −offset, Bottom/Right at +offset from 0,0), not from the edges of the box. Keep the copy and the hero illustration saying this.
 - The page has no testimonials, user counts, or stats. Only add real ones.
+- Timing is one measured dieline in the demo: 1 minute 45 seconds by hand, 30 seconds with Offset Guides. That is 75 seconds less, about 71% less time, not a guarantee for every file. Do not call it 71% faster.
