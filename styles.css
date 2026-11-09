@@ -53,7 +53,7 @@ h1 i{color:var(--acc)}
 .p-btns button:hover{background:#777}.p-btns button:active{background:#8a8a8a}
 .panel :focus-visible{outline:2px solid #fff;outline-offset:1px}
 .try{padding:clamp(80px,12vw,160px) clamp(20px,5vw,72px);text-align:left;max-width:1200px;margin:0 auto}
-.try h2,.details h2,.faq h2,.time h2{font:400 clamp(44px,5vw,76px)/1 var(--serif);margin:0 0 12px;letter-spacing:-.01em}
+.try h2,.faq h2,.time h2{font:400 clamp(44px,5vw,76px)/1 var(--serif);margin:0 0 12px;letter-spacing:-.01em}
 .sub{color:var(--mute);margin:0 0 40px}
 .try-stage{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;background:#fff;padding:clamp(16px,3vw,40px);border-radius:20px}
 #ts{width:100%;height:auto}
@@ -75,9 +75,6 @@ h1 i{color:var(--acc)}
 .ph{background:#e7dc9e;padding:.04em .28em;border-radius:2px}
 .demo{margin:0 0 28px}
 .demo-video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#e9e7e1;border-radius:20px}
-.details{padding:clamp(80px,12vw,160px) clamp(20px,5vw,72px);display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1300px;margin:0 auto}
-.details dl{margin:0}.details dl div{padding:22px 0;border-top:1px solid var(--line)}
-.details dt{font-weight:600;font-size:20px}.details dd{margin:4px 0 0;color:var(--mute)}
 .buy{background:var(--ink);color:#f4f3ef;text-align:left;padding:clamp(80px,12vw,160px) clamp(20px,5vw,72px)}
 .buy h2{font:400 clamp(90px,14vw,220px)/.9 var(--serif);margin:0 0 20px;letter-spacing:-.03em}
 .buy p{max-width:44ch;color:#c9ccd6}
@@ -95,7 +92,7 @@ details p{margin:0 0 22px;color:var(--mute)}
  .bar nav{display:none}
  .hero{grid-template-columns:1fr;min-height:auto;padding-top:56px}
  .ab{max-height:none}.hero-visual{padding-bottom:150px}.hs-status{display:none}
- .try-stage,.details,.time-cols{grid-template-columns:1fr}
+ .try-stage,.time-cols{grid-template-columns:1fr}
  .time-cols > div,.time-cols > div + div{border-left:0;padding:0}
  .time-cols > div + div{border-top:1px solid var(--line);margin-top:32px;padding-top:32px}
  .try-stage .panel{zoom:1.2}
