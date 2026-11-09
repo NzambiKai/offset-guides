@@ -23,7 +23,6 @@ h1 i{color:var(--acc)}
 .rbg{fill:#f7f6f2}.rcorner{fill:#ecebe6}.tick{stroke:#8a8d98;stroke-width:.25}.rl{font:500 3.6px var(--sans);fill:#6a6e7b}
 .ab .cut{fill:none;stroke:var(--ink);stroke-width:1.15;stroke-linejoin:round}
 .ab .fold,.die-g .fold{fill:none;stroke:var(--ink);stroke-width:.9;stroke-dasharray:5 3.5;opacity:.75}
-#rv .cut{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round}#rv .fold{stroke-width:1.1}
 .g-applied line{stroke:#00a8e8;stroke-width:1.25px;vector-effect:non-scaling-stroke}.g-applied text{font:600 4.6px var(--sans);fill:#0a8fc0}
 .g-preview line{stroke:#00a8e8;stroke-width:1px;vector-effect:non-scaling-stroke;stroke-dasharray:1.6 1.4;opacity:.8}
 .ox{stroke:var(--ink);stroke-width:.3}.oc{fill:#fff;stroke:var(--ink);stroke-width:.4}.ot{font:600 4.4px var(--sans);fill:var(--ink)}
@@ -53,18 +52,6 @@ h1 i{color:var(--acc)}
 .p-btns button{flex:1;height:24px;border:0;border-radius:2px;background:#6a6a6a;color:#d4d4d4;font:inherit;cursor:default;padding:0}
 .p-btns button:hover{background:#777}.p-btns button:active{background:#8a8a8a}
 .panel :focus-visible{outline:2px solid #fff;outline-offset:1px}
-.reveal{height:300vh;position:relative;background:#fff}
-.reveal-sticky{position:sticky;top:52px;height:calc(100vh - 52px);display:grid;grid-template-rows:1fr auto;padding:20px clamp(20px,5vw,72px) 48px}
-#rv{width:100%;height:100%;min-height:0}
-.die{fill:none;stroke:var(--ink);stroke-width:1.6}
-#rv-g line{stroke:var(--acc);stroke-width:1.4;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 1.1s cubic-bezier(.2,.7,.2,1)}
-#rv-g line.on{stroke-dashoffset:0}
-#rv-g text{font:500 15px var(--sans);fill:var(--acc);opacity:0;transition:opacity .6s .5s}#rv-g text.on{opacity:1}
-.o circle{fill:#fff;stroke:var(--ink);stroke-width:2}.o-t{font:500 15px var(--sans);fill:var(--ink)}
-.captions{position:relative;height:8.6em;text-align:center}
-.cap{position:absolute;inset:0;margin:0;font:400 clamp(26px,2.8vw,40px)/1.12 var(--serif);opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s}
-.cap span{display:block;font:400 17px var(--sans);color:var(--mute);margin-top:10px}
-.cap.on{opacity:1;transform:none}
 .try{padding:clamp(80px,12vw,160px) clamp(20px,5vw,72px);text-align:left;max-width:1200px;margin:0 auto}
 .try h2,.details h2,.faq h2,.time h2{font:400 clamp(44px,5vw,76px)/1 var(--serif);margin:0 0 12px;letter-spacing:-.01em}
 .sub{color:var(--mute);margin:0 0 40px}
@@ -86,13 +73,8 @@ h1 i{color:var(--acc)}
 .time .est{margin-top:auto;padding-top:20px;font-weight:500}
 .time-note{margin:0 0 36px;color:var(--mute);font-size:15px}
 .ph{background:#e7dc9e;padding:.04em .28em;border-radius:2px}
-.film{padding:0 clamp(20px,5vw,72px)}
-.demo{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:16px;row-gap:14px;align-items:center}
-.demo-video{grid-column:1 / -1;display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#e9e7e1;border-radius:20px}
-.demo-toggle{border:0;background:var(--ink);color:#fff;font:inherit;font-weight:500;line-height:1;padding:14px 22px;border-radius:999px;cursor:pointer}
-.demo-toggle:hover{background:#000}
-.demo-toggle:disabled{opacity:.55;cursor:default}
-.demo figcaption{grid-column:2;margin:0;color:var(--mute);font-size:15px}
+.demo{margin:0 0 28px}
+.demo-video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;background:#e9e7e1;border-radius:20px}
 .details{padding:clamp(80px,12vw,160px) clamp(20px,5vw,72px);display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1300px;margin:0 auto}
 .details dl{margin:0}.details dl div{padding:22px 0;border-top:1px solid var(--line)}
 .details dt{font-weight:600;font-size:20px}.details dd{margin:4px 0 0;color:var(--mute)}
@@ -118,7 +100,5 @@ details p{margin:0 0 22px;color:var(--mute)}
  .time-cols > div + div{border-top:1px solid var(--line);margin-top:32px;padding-top:32px}
  .try-stage .panel{zoom:1.2}
  .dock{zoom:1.15;right:10px;bottom:10px}.hero-visual{padding-bottom:170px}
- .demo{grid-template-columns:1fr}.demo-actions,.demo figcaption{grid-column:1}
- .reveal{height:260vh}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important}.reveal{height:auto}.reveal-sticky{position:static;height:auto}#rv{height:auto}.captions{height:auto}.cap{position:static;opacity:1;transform:none;margin-bottom:16px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

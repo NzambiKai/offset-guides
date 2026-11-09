@@ -1,23 +1,10 @@
 (() => {
   const NS = "http://www.w3.org/2000/svg", $ = s => document.querySelector(s);
   const el = (n, a, t) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (t != null) e.textContent = t; return e; };
-  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   // Simple box, mm: one 70 x 93 rectangle. 0,0 = its top-left corner (60,40).
   const CUT = "M60 40 H130 V133 H60 Z";
   const FOLD = "";
   document.querySelectorAll(".die-g").forEach(g => g.append(el("path", { class: "cut", d: CUT, "vector-effect": "non-scaling-stroke" }), el("path", { class: "fold", d: FOLD, "vector-effect": "non-scaling-stroke" })));
-  // reveal scene (s=3 px/mm, origin at 380,200)
-  const O = { x: 380, y: 200 }, D = 30, G = $("#rv-g");
-  const guides = [
-    { k: "h", p: O.y + D, lab: "+10 mm", x: 20, y: O.y + D - 8 },
-    { k: "v", p: O.x + D, lab: "+10 mm", x: O.x + D + 8, y: 24 },
-    { k: "h", p: O.y - D, lab: "−10 mm", x: 20, y: O.y - D - 8 },
-    { k: "v", p: O.x - D, lab: "−10 mm", x: O.x - D - 8, y: 24, end: 1 }
-  ].map(g => { const l = g.k === "h" ? el("line", { x1: 0, x2: 1000, y1: g.p, y2: g.p }) : el("line", { y1: 0, y2: 620, x1: g.p, x2: g.p }); const t = el("text", { x: g.x, y: g.y, "text-anchor": g.end ? "end" : "start" }, g.lab); G.append(l, t); return [l, t]; });
-  const caps = [...document.querySelectorAll(".cap")];
-  function stage(i) { const show = i >= 1; guides.forEach(([l, t]) => { l.classList.toggle("on", show); t.classList.toggle("on", show); }); caps.forEach((c, ci) => c.classList.toggle("on", ci === i)); }
-  if (reduce) stage(2);
-  else { const R = $("#reveal"); const upd = () => { const r = R.getBoundingClientRect(); const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight))); stage(p < .3 ? 0 : p < .65 ? 1 : 2); }; addEventListener("scroll", upd, { passive: true }); upd(); }
 
   // Panel controller, bound per artboard
   function panel({ root, svg, gA, gP, status, M, PX, MAX, box, labels, initial }) {
@@ -54,28 +41,18 @@
   const ts = $("#ts");
   panel({ root: $(".try-stage .panel"), svg: ts, gA: $("#t-applied"), gP: $("#t-preview"), status: $("#status"), M: { x: 200, y: 120 }, PX: 4, MAX: 28, box: { x0: 0, x1: 560, y0: 0, y1: 380 }, labels: false });
 
-  // Silent file. muted stays on so autoplay is allowed; skip autoplay when reduced motion is requested.
-  const video = $("#demo-video"), toggle = $("#demo-toggle");
-  if (video && toggle) {
+  // Silent file. muted stays on so autoplay is allowed. Native controls remain if motion is reduced or play() is rejected.
+  const video = $("#demo-video");
+  if (video) {
     const motion = matchMedia("(prefers-reduced-motion: reduce)");
-    const arm = () => { video.muted = true; video.defaultMuted = true; video.playsInline = true; video.setAttribute("muted", ""); video.setAttribute("playsinline", ""); };
-    const label = () => { if (!toggle.disabled) toggle.textContent = video.paused ? "Play demo" : "Pause demo"; };
-    const play = () => { arm(); const pending = video.play(); if (pending && pending.then) pending.then(label, label); else label(); };
-    const hold = () => { video.autoplay = false; video.removeAttribute("autoplay"); video.loop = false; video.pause(); label(); };
+    const arm = () => { video.muted = true; video.defaultMuted = true; video.playsInline = true; video.controls = true; video.setAttribute("muted", ""); video.setAttribute("playsinline", ""); video.setAttribute("controls", ""); };
+    const play = () => { arm(); const pending = video.play(); if (pending && pending.catch) pending.catch(() => {}); };
+    const hold = () => { video.autoplay = false; video.removeAttribute("autoplay"); video.loop = false; video.pause(); arm(); };
     const applyMotion = () => {
       arm();
       if (motion.matches) hold();
       else { video.loop = true; video.autoplay = true; video.setAttribute("autoplay", ""); video.setAttribute("loop", ""); play(); }
     };
-    toggle.addEventListener("click", () => {
-      if (toggle.disabled) return;
-      if (video.paused) { toggle.textContent = "Pause demo"; play(); }
-      else { video.pause(); toggle.textContent = "Play demo"; }
-    });
-    video.addEventListener("play", label);
-    video.addEventListener("pause", label);
-    video.addEventListener("ended", label);
-    video.addEventListener("error", () => { toggle.disabled = true; toggle.textContent = "Demo unavailable"; });
     if (motion.addEventListener) motion.addEventListener("change", applyMotion);
     applyMotion();
   }

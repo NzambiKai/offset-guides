@@ -15,7 +15,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="bar">
   <a class="brand" href="#main">Offset Guides</a>
-  <nav aria-label="Primary"><a href="#reveal">Overview</a><a href="#try">Try it</a><a href="#time">Time saved</a><a href="#details">Details</a><a href="#faq">FAQ</a></nav>
+  <nav aria-label="Primary"><a href="#try">Try it</a><a href="#time">Time saved</a><a href="#details">Details</a><a href="#faq">FAQ</a></nav>
   <a class="bar-buy" href="#BUY_LINK_PLACEHOLDER">Buy</a>
 </header>
 <main id="main">
@@ -64,24 +64,6 @@
   </div>
 </section>
 
-<section class="reveal" id="reveal" aria-labelledby="rev-h">
-  <div class="reveal-sticky">
-    <svg id="rv" viewBox="0 0 1000 620" role="img" aria-labelledby="rv-t rv-d">
-      <title id="rv-t">Guides appearing on a dieline as you scroll</title>
-      <desc id="rv-d">A simple box dieline. The ruler origin is at the top-left of the box because it was placed there. All four guides are 10 mm from that origin: Top and Left at minus 10 mm, Bottom and Right at plus 10 mm. The panel does not move the origin.</desc>
-      <g class="die-g" transform="translate(200 80) scale(3)"></g>
-      <g id="rv-g"></g>
-      <g class="o"><circle cx="380" cy="200" r="6"/></g>
-      <text class="o-t" x="368" y="190" text-anchor="end">0,0</text>
-    </svg>
-    <div class="captions">
-      <h2 id="rev-h" class="cap" data-i="0">You move 0,0.<span>The panel reads the ruler origin. It does not place it.</span></h2>
-      <p class="cap" data-i="1">All four sides, 10 mm.<span>The fresh default, before you change anything.</span></p>
-      <p class="cap" data-i="2">From that origin.<span>Top and Left at −10 mm. Bottom and Right at +10 mm.</span></p>
-    </div>
-  </div>
-</section>
-
 <section class="try" id="try" aria-labelledby="try-h">
   <h2 id="try-h">Try it.</h2>
   <p class="sub">All four sides start on, at 10 mm. Toggle a side, change the offset, then Apply Guides.</p>
@@ -117,6 +99,11 @@
 </section>
 
 <section class="time" id="time" aria-labelledby="time-h">
+  <div class="demo">
+    <video id="demo-video" class="demo-video" width="1920" height="1080" src="demo.mp4" autoplay muted loop playsinline webkit-playsinline controls preload="metadata" aria-label="Demo of Offset Guides on this dieline">
+      <a href="demo.mp4">Watch the demo</a>
+    </video>
+  </div>
   <h2 id="time-h">This dieline took 1 minute 45 seconds by hand. With Offset Guides: 30 seconds. That's 75 seconds saved.</h2>
   <p class="time-note">Results vary by task.</p>
   <div class="time-cols">
@@ -141,18 +128,6 @@
       <p class="est">30 seconds</p>
     </div>
   </div>
-</section>
-
-<section class="film" aria-label="Demo video">
-  <figure class="demo">
-    <video id="demo-video" class="demo-video" width="1920" height="1080" src="demo.mp4" autoplay muted loop playsinline webkit-playsinline controls preload="metadata" aria-describedby="demo-caption">
-      <p>Silent demo. Set the offset, tick the sides, click Apply Guides. <a href="demo.mp4">Watch the demo</a>.</p>
-    </video>
-    <div class="demo-actions">
-      <button type="button" class="demo-toggle" id="demo-toggle" aria-controls="demo-video">Play demo</button>
-    </div>
-    <figcaption id="demo-caption">Silent demo. Set the offset, tick the sides, click Apply Guides.</figcaption>
-  </figure>
 </section>
 
 <section class="details" id="details" aria-labelledby="det-h">
