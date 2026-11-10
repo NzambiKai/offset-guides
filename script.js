@@ -36,10 +36,10 @@
   const og = hs.querySelector(".origin");
   og.append(el("line", { class: "ox", x1: OX - 4, x2: OX + 4, y1: OY, y2: OY }), el("line", { class: "ox", x1: OX, x2: OX, y1: OY - 4, y2: OY + 4 }), el("circle", { class: "oc", cx: OX, cy: OY, r: 1.6 }), el("text", { class: "ot", x: OX + 2.2, y: OY + 5.2 }, "0,0"));
   const hv = $(".hero-visual");
-  panel({ root: hv.querySelector(".panel"), svg: hs, gA: hs.querySelector(".g-applied"), gP: hs.querySelector(".g-preview"), status: hv.querySelector(".hs-status"), M: { x: OX, y: OY }, PX: 1, MAX: 40, box: { x0: -18, x1: 210, y0: -16, y1: 196 }, labels: true, initial: true });
+  panel({ root: hv.querySelector(".panel"), svg: hs, gA: hs.querySelector(".g-applied"), gP: hs.querySelector(".g-preview"), status: hv.querySelector(".panel-msg"), M: { x: OX, y: OY }, PX: 1, MAX: 40, box: { x0: -18, x1: 210, y0: -16, y1: 196 }, labels: true, initial: true });
   // Try-it section
   const ts = $("#ts");
-  panel({ root: $(".try-stage .panel"), svg: ts, gA: $("#t-applied"), gP: $("#t-preview"), status: $("#status"), M: { x: 200, y: 120 }, PX: 4, MAX: 28, box: { x0: 0, x1: 560, y0: 0, y1: 380 }, labels: false });
+  panel({ root: $(".try-stage .panel"), svg: ts, gA: $("#t-applied"), gP: $("#t-preview"), status: $(".try-stage .panel-msg"), M: { x: 200, y: 120 }, PX: 4, MAX: 28, box: { x0: 0, x1: 560, y0: 0, y1: 380 }, labels: false });
 
   // Silent file. muted stays on so autoplay is allowed. Native controls remain if motion is reduced or play() is rejected.
   const video = $("#demo-video");
