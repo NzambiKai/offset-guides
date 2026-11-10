@@ -28,11 +28,12 @@ h1 i{color:var(--acc)}
 .ox{stroke:var(--ink);stroke-width:.3}.oc{fill:#fff;stroke:var(--ink);stroke-width:.4}.ot{font:600 4.4px var(--sans);fill:var(--ink)}
 
 /* Shipped panel, native 260×110. Dark Illustrator skin from the headless render. */
-.dock{position:absolute;right:clamp(10px,1.5vw,20px);bottom:clamp(10px,1.5vw,20px);width:260px;background:#484848;box-shadow:0 1px 0 #3a3a3a,0 18px 30px -16px rgba(22,32,58,.5)}
-.dock-strip{display:flex;align-items:flex-end;justify-content:space-between;background:#3a3a3a;border-top:1px solid #2f2f2f;height:22px;font:11px "Adobe Clean","Myriad Pro",-apple-system,"Helvetica Neue",Arial,sans-serif;color:#d4d4d4}
-.dock-tab{background:#484848;padding:4px 10px 0;height:20px}
-.dock-menu{width:10px;height:7px;margin:0 8px 7px;border-top:1px solid #a8a8a8;border-bottom:1px solid #a8a8a8;position:relative}
-.dock-menu::after{content:"";position:absolute;left:0;right:0;top:2px;border-top:1px solid #a8a8a8}
+.dock{position:absolute;right:clamp(10px,1.5vw,20px);bottom:clamp(10px,1.5vw,20px);width:260px;background:#484848;box-shadow:0 18px 30px -16px rgba(22,32,58,.5)}
+.panel-frame{width:260px;background:#484848}
+.dock-strip{display:flex;align-items:flex-end;background:#3a3a3a;border-top:1px solid #2f2f2f;height:28px;font:700 11px "Adobe Clean","Myriad Pro",-apple-system,"Helvetica Neue",Arial,sans-serif}
+.dock-tab{display:flex;align-items:center;height:26px;padding:0 12px;background:#484848;color:#eeeeee;font-weight:700}
+.dock-grip{height:10px;background:#3a3a3a;display:flex;align-items:center;justify-content:center}
+.dock-grip::before{content:"";width:22px;height:4px;background:repeating-linear-gradient(90deg,#6a6a6a 0 1px,transparent 1px 3px)}
 .panel{background:#484848;color:#d4d4d4;font:11px "Adobe Clean","Myriad Pro",-apple-system,"Helvetica Neue",Arial,sans-serif;padding:8px 10px;width:260px;-webkit-user-select:none;user-select:none}
 .panel *{box-sizing:border-box}
 .dock .panel{width:auto}
