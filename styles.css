@@ -5,7 +5,8 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2px}
 .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;padding:8px;z-index:9}
 .bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:32px;height:52px;padding:0 clamp(20px,5vw,72px);background:var(--bg);border-bottom:1px solid var(--line);font-size:14px}
-.brand{font-weight:600;text-decoration:none;margin-right:auto}
+.brand{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;margin-right:auto}
+.brand-mark{display:block;width:22px;height:22px;flex:none}
 .bar nav{display:flex;gap:28px}.bar nav a{text-decoration:none;color:var(--mute)}.bar nav a:hover{color:var(--ink)}
 .bar-buy{background:var(--ink);color:#fff;text-decoration:none;padding:6px 16px;border-radius:999px;font-weight:500}
 .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;min-height:calc(100vh - 52px);padding:40px clamp(20px,5vw,72px)}
